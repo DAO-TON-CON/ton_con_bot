@@ -13,7 +13,7 @@ $roskassa_secretkey = 'XXXX'; // TON CON Secret Key
 $tonconrate = 1.6181; // CON and CryptoBot comission
 $NFTwalletTON = "XXXXX"; // TON Wallet for incoming payments
 $nftCatRate = 45; // Is not in use
-$nftDogRate = 65;// Is not in use
+$nftDogRate = 161.81;// Is not in use
 $toncenterAPIKey = "XXXXX"; // API Key of Toncenter website
 $CryptoPayAPIToken = ""; // CryptoPay API Token
 define('TOKEN', 'XXXXX'); // Add the Bot API Token
