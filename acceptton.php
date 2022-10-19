@@ -1,22 +1,22 @@
 <?php 
 function acceptton($gotTON, $senderid){
-	global $chat_id, $link, $langcode, $text, $NFTRefPercent, $tegrotonrate;
+	global $chat_id, $link, $langcode, $text, $NFTRefPercent, $tonconrate;
 	
-	$sumInTegroTON = $gotTON / $tegrotonrate;
+	$sumInTONCON = $gotTON / $tonconrate;
 	
 	$str16select = "SELECT * FROM `nft` WHERE `chatid`='$chat_id'";
 	$result16 = mysqli_query($link, $str16select);
 		if(mysqli_num_rows($result16) == 0 ){
 
-			$str2ins = "INSERT INTO `nft` (`chatid`,`tegroton`) VALUES ('$chat_id','$sumInTegroTON')";				
+			$str2ins = "INSERT INTO `nft` (`chatid`,`toncon`) VALUES ('$chat_id','$sumInTONCON')";				
 			mysqli_query($link, $str2ins);
 
 		}else{
 			$row16 = @mysqli_fetch_object($result16);
-			$oldsum = $row16->tegroton;
+			$oldsum = $row16->toncon;
 
-			$newsum = $oldsum + $sumInTegroTON;	
-			$str11upd = "UPDATE `nft` SET `tegroton`='".$newsum."' WHERE `chatid`='$chat_id'";
+			$newsum = $oldsum + $sumInTONCON;	
+			$str11upd = "UPDATE `nft` SET `toncon`='".$newsum."' WHERE `chatid`='$chat_id'";
 			mysqli_query($link, $str11upd);
 							
 		}
@@ -43,7 +43,7 @@ function acceptton($gotTON, $senderid){
 		'text' => "�");	
 	sendit($response, 'sendMessage');*/
 	
-	$tomessage = str_replace("%nft_balance%", $row16->tegroton, "Ваш платеж получен и зачислен на ваш баланс. Баланс: %nft_balance% Tegro TON");
+	$tomessage = str_replace("%nft_balance%", $row16->toncon, "Ваш платеж получен и зачислен на ваш баланс. Баланс: %nft_balance% TON CON");
 	
 	$arInfo["inline_keyboard"][0][0]["callback_data"] = 251;
 	$arInfo["inline_keyboard"][0][0]["text"] = "<< Назад";
@@ -57,7 +57,7 @@ function acceptton($gotTON, $senderid){
 	
 	######## SAVE TRANSACTION ###########
 	$date_time = date("j-m-Y G:i");
-	$str2ins = "INSERT INTO `transactions` (`chatid`,`sender`,`date_time`,`tegroton`) VALUES ('$chat_id','$senderid','$date_time','$sumInTegroTON')";
+	$str2ins = "INSERT INTO `transactions` (`chatid`,`sender`,`date_time`,`toncon`) VALUES ('$chat_id','$senderid','$date_time','$sumInTONCON')";
 	mysqli_query($link, $str2ins);
 	######## SAVE TRANSACTION ###########											
 	
