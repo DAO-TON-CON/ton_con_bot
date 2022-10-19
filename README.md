@@ -1,24 +1,24 @@
 <br/>
 <p align="center">
 
-  <h3 align="center">TegroTONbot - Telegram bot</h3>
+  <h3 align="center">ton_con_bot - Telegram bot</h3>
 
   <p align="center">
     An Awesome ReadME To Jumpstart Your Own Telegram Bot!
     <br/>
     <br/>
-    <a href="https://github.com/TGRTON/TegroTONbot"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/DAO-TON-CON/ton_con_bot"><strong>Explore the docs »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/TGRTON/TegroTONbot">View Demo</a>
+    <a href="https://github.com/DAO-TON-CON/ton_con_bot">View Demo</a>
     .
-    <a href="https://github.com/TGRTON/TegroTONbot/issues">Report Bug</a>
+    <a href="https://github.com/DAO-TON-CON/ton_con_bot/issues">Report Bug</a>
     .
-    <a href="https://github.com/TGRTON/TegroTONbot/issues">Request Feature</a>
+    <a href="https://github.com/DAO-TON-CON/ton_con_bot/issues">Request Feature</a>
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/TGRTON/TegroTONbot/total) ![Contributors](https://img.shields.io/github/contributors/TGRTON/TegroTONbot?color=dark-green) ![Issues](https://img.shields.io/github/issues/TGRTON/TegroTONbot) ![License](https://img.shields.io/github/license/TGRTON/TegroTONbot) 
+![Downloads](https://img.shields.io/github/downloads/DAO-TON-CON/ton_con_bot/total) ![Contributors](https://img.shields.io/github/contributors/DAO-TON-CON/ton_con_bot?color=dark-green) ![Issues](https://img.shields.io/github/issues/DAO-TON-CON/ton_con_bot) ![License](https://img.shields.io/github/license/DAO-TON-CON/ton_con_bot) 
 
 ## Table Of Contents
 
@@ -70,7 +70,7 @@ $verifRefFee = 0.05; // Commission to referral from verification payment  <br/>
 $api_key = 'XXX'; // Tegro Money API Key  <br/>
 $roskassa_publickey = 'XXXX'; // Tegro Money Public Key  <br/>
 $roskassa_secretkey = 'XXXX'; // Tegro Money Secret Key  <br/>
-$tegrotonrate = 0.1; // Tegro and CryptoBot commission  <br/>
+$tonconrate = 0.1; // Tegro and CryptoBot commission  <br/>
 $NFTwalletTON = "XXXXX"; // TON Wallet for incoming payments <br/> 
 $nftCatRate = 45; // Is not in use  <br/>
 $nftDogRate = 65;// Is not in use  <br/>
@@ -100,15 +100,15 @@ Find the bot in the Telegram environment by its username: `@YourBot` and start i
 
 ## Roadmap
 
-See the [open issues](https://github.com/TGRTON/TegroTONbot/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/DAO-TON-CON/ton_con_bot/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/TGRTON/TegroTONbot/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
+* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/DAO-TON-CON/ton_con_bot/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
 * Please make sure you check your spelling and grammar.
 * Create individual PR for each suggestion.
-* Please also read through the [Code Of Conduct](https://github.com/TGRTON/TegroTONbot/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
+* Please also read through the [Code Of Conduct](https://github.com/DAO-TON-CON/ton_con_bot/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
 
 ### Creating A Pull Request
 
@@ -120,7 +120,7 @@ Contributions are what make the open source community such an amazing place to b
 
 ## License
 
-https://github.com/TGRTON/TegroTONbot/commit/c208edcb519704cc98b2d9835d5ab9fef17b4d4e
+https://github.com/DAO-TON-CON/ton_con_bot/commit/c208edcb519704cc98b2d9835d5ab9fef17b4d4e
 
 ## Authors
 
