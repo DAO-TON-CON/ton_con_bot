@@ -114,14 +114,14 @@ if($ref != ''){
 					'text' => hex2bin('F09F92B0').' '.$data['message']['from']['first_name'].' '.$data['message']['from']['last_name'].' зарегистрировался по вашей партнерской ссылке.
 			
 Используйте эту ссылку для приглашения пользователей:
-t.me/tegrotonbot?start='.$ref);
+t.me/ton_con_bot?start='.$ref);
 			sendit($response, 'sendMessage');			
 		}
 	}
 }
 // record referral
 
-#mainmenu("Привет! Я Ваш виртуальный помощник в мире TON Coin. ");
+#mainmenu("Привет! Я Ваш виртуальный помощник в мире TON CON. ");
 setLangiage();
 
 
@@ -242,8 +242,8 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][5])."/", $data['mes
 	$nftcust = ($row16->cust != '') ? $row16->cust : 0;
 	$message = str_replace("%NFTCust%", $nftcust, $message);	
 	
-	$tegroton = ($row16->tegroton != '') ? $row16->tegroton : 0;
-	$message = str_replace("%TegroToken%", $tegroton, $message);			
+	$toncon = ($row16->toncon != '') ? $row16->toncon : 0;
+	$message = str_replace("%TegroToken%", $toncon, $message);			
 
 	//GET USDT RATE
 	$ch = curl_init();
@@ -303,11 +303,11 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][6])."/", $data['mes
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][7])."/", $data['message']['text'])){
 	//Donate
 	$url2 = 'ton://transfer/'.$verifyrecepient;
-	$arInfo["inline_keyboard"][0][0]["text"] = "Открыть keeper";
+	$arInfo["inline_keyboard"][0][0]["text"] = "Открыть Keeper";
 	$arInfo["inline_keyboard"][0][0]["url"] = rawurldecode($url2);	
 	$arInfo["inline_keyboard"][0][1]["callback_data"] = 2;
 	$arInfo["inline_keyboard"][0][1]["text"] = "Показать кошелек";		
-	send($chat_id, "Приветствуем тебя, $fname
+	send($chat_id, "Добро пожаловать, $fname
 
 Мы будем очень рады, если ты нас поддержишь 🤗
 
@@ -445,7 +445,7 @@ elseif( preg_match("/The Token/", $data['message']['text'])){
 		'parse_mode' => 'HTML');	
 	sendit($response, 'sendMessage');
 }
-elseif( preg_match("/Pre-sale TGR/", $data['message']['text'])){	
+elseif( preg_match("/Pre-sale CON/", $data['message']['text'])){	
 
 	processWallet();
 
@@ -525,10 +525,10 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][71])."/", $data['me
 		
 	}else{
 
-		$url = 'https://t.me/tegrocatnft';
+		$url = 'https://t.me/ton_con';
 		$arInfo["inline_keyboard"][0][0]["text"] = $text[$langcode][72];
 		$arInfo["inline_keyboard"][0][0]["url"] = rawurldecode($url);	
-		$url2 = 'https://t.me/gusevself';
+		$url2 = 'https://t.me/ton_con_ru';
 		$arInfo["inline_keyboard"][1][0]["text"] = $text[$langcode][73];
 		$arInfo["inline_keyboard"][1][0]["url"] = rawurldecode($url2);	
 		$arInfo["inline_keyboard"][2][0]["callback_data"] = "checksubscr";
@@ -1427,7 +1427,7 @@ else{
 				clean_temp_sess();
 				choosePayMethod($tonsum);
 				
-				$suminton = $tonsum * $tegrotonrate;
+				$suminton = $tonsum * $tonconrate;
 				$tomeswal = str_replace("%suminton%", $suminton, $text[$langcode][107]);
 				
 				$response = array(
@@ -1890,13 +1890,13 @@ function sendMeSumTON(){
 }
 
 function choosePayMethod($sum){
-	global $chat_id, $link, $langcode, $text, $tegrotonrate,$CryptoPayAPIToken;
+	global $chat_id, $link, $langcode, $text, $tonconrate,$CryptoPayAPIToken;
 	
-	$suminton = $sum * $tegrotonrate;
+	$suminton = $sum * $tonconrate;
 ################# PREPARE FOR CRYPTO BOT #######################
 	$ctime = time();
 	$payload = $chat_id;
-	$data = array("asset"=>"TON", "amount"=>$suminton, "payload"=>$payload, "paid_btn_name"=>"callback", "paid_btn_url"=>"https://t.me/TegroTonBot");
+	$data = array("asset"=>"TON", "amount"=>$suminton, "payload"=>$payload, "paid_btn_name"=>"callback", "paid_btn_url"=>"https://t.me/ton_con_bot");
 	
 	$prop = http_build_query($data);
 	
@@ -1948,14 +1948,14 @@ function makelink($sum){
 }
 
 function messageIfPayByTON($sum){
-	global $chat_id, $link, $langcode, $text, $NFTwalletTON, $tegrotonrate;
+	global $chat_id, $link, $langcode, $text, $NFTwalletTON, $tonconrate;
 	
 	$str20select = "SELECT `wallet` FROM `users` WHERE `chatid`='$chat_id'";
 	$result20 = mysqli_query($link, $str20select);
 	$row20 = @mysqli_fetch_object($result20);
 	$walletno = $row20->wallet;
 	
-	$nftcode = "tegroton;".rand_string(20);
+	$nftcode = "toncon;".rand_string(20);
 	$str2upd = "UPDATE `users` SET `nftcode`='$nftcode' WHERE `chatid`='$chat_id'";
 	mysqli_query($link, $str2upd);				
 
@@ -2078,7 +2078,7 @@ function checkInlineQuery()
 								[
 									[
 										'text' => $text[$langcode][112],
-										'url' => 'https://t.me/tegrotonbot?start='.$chatid,
+										'url' => 'https://t.me/ton_con_bot?start='.$chatid,
 									],
 								],
 							],
