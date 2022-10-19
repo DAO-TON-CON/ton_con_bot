@@ -53,13 +53,13 @@ if($percent >= 10){
 		}
 	
 		if($row->lang == 0){
-			$message = 	"📌 ATTENTION! The fluctuation of the Toncoin exchange rate amounted to $percent%.
+			$message = 	"📌 ATTENTION! The fluctuation of the TON exchange rate amounted to $percent%.
 	Yesterday's course: $old
 	Today's course: $new
 	
 	To unsubscribe from notifications, run the /stop command";
 		} else {
-			$message = 	"📌 ВНИМАНИЕ! Колебание курса Toncoin составило $percent%. 
+			$message = 	"📌 ВНИМАНИЕ! Колебание курса TON составило $percent%. 
 	Вчерашний курс: $old
 	Сегодняшний курс: $new
 	
