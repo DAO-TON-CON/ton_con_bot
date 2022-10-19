@@ -38,7 +38,7 @@
 
 This project contains everything you need to launch your own Telegram bot quickly.
 
-This bot is designed for communication with interested audience, TGR presale, buying cryptocurrency TON and also has referral program.
+This bot is designed for communication with interested audience, CON presale, buying cryptocurrency TON and also has referral program.
 
 ## Built With
 
