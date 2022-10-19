@@ -1774,7 +1774,7 @@ function NFTMenu($message){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
 	$arInfo["keyboard"][0][0]["text"] = "🔵 ".$text[$langcode][66];
-	$arInfo["keyboard"][0][1]["text"] = "🖼 ".$text[$langcode][67];
+	$arInfo["keyboard"][0][1]["text"] = "💡 ".$text[$langcode][67];
 	$arInfo["keyboard"][1][0]["text"] = "👆 ".$text[$langcode][78];	
 	$arInfo["keyboard"][1][1]["text"] = "↩️ ".$text[$langcode][13];
 	$arInfo["resize_keyboard"] = TRUE;
