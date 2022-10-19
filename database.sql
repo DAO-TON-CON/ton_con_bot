@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `u0904790_tegrotonbot`
+-- База данных: `u0904790_ton_con_bot`
 --
 
 -- --------------------------------------------------------
@@ -59,7 +59,7 @@ CREATE TABLE `nft` (
   `dog` int(4) NOT NULL,
   `cat` int(4) NOT NULL,
   `cust` int(4) NOT NULL,
-  `tegroton` int(8) NOT NULL
+  `toncon` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -114,7 +114,7 @@ CREATE TABLE `transactions` (
   `nftcat` float NOT NULL,
   `nftdog` float NOT NULL,
   `nftcust` float NOT NULL,
-  `tegroton` int(8) NOT NULL
+  `toncon` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
