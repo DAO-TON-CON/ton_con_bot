@@ -1,22 +1,5 @@
-<br/>
-<p align="center">
-
-  <h3 align="center">ton_con_bot - Telegram bot</h3>
-
-  <p align="center">
-    An Awesome ReadME To Jumpstart Your Own Telegram Bot!
-    <br/>
-    <br/>
-    <a href="https://github.com/DAO-TON-CON/ton_con_bot"><strong>Explore the docs »</strong></a>
-    <br/>
-    <br/>
-    <a href="https://github.com/DAO-TON-CON/ton_con_bot">View Demo</a>
-    .
-    <a href="https://github.com/DAO-TON-CON/ton_con_bot/issues">Report Bug</a>
-    .
-    <a href="https://github.com/DAO-TON-CON/ton_con_bot/issues">Request Feature</a>
-  </p>
-</p>
+# TON CON BOT
+[@ton_con_bot](https://t.me/ton_con_bot)
 
 ![Downloads](https://img.shields.io/github/downloads/DAO-TON-CON/ton_con_bot/total) ![Contributors](https://img.shields.io/github/contributors/DAO-TON-CON/ton_con_bot?color=dark-green) ![Issues](https://img.shields.io/github/issues/DAO-TON-CON/ton_con_bot) ![License](https://img.shields.io/github/license/DAO-TON-CON/ton_con_bot) 
 
