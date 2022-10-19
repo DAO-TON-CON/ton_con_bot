@@ -307,13 +307,10 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][7])."/", $data['mes
 	$arInfo["inline_keyboard"][0][0]["url"] = rawurldecode($url2);	
 	$arInfo["inline_keyboard"][0][1]["callback_data"] = 2;
 	$arInfo["inline_keyboard"][0][1]["text"] = "Показать кошелек";		
-	send($chat_id, "Добро пожаловать, $fname
-
-Мы будем очень рады, если ты нас поддержишь 🤗
-
-Пожертвования помогают проекту развиваться еще быстрее, а авторам поднимают настроение и мотивацию делать для вас еще больше интересного функционала.
-
-Спасибо большое!", $arInfo); 	
+	send($chat_id, "Приветствуем тебя, $fname
+Мы очень рады вашей поддержке 🙏
+Donation помогает развиваться еще быстрее.
+Благодарим! ", $arInfo); 	
 
 }
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][9])."/", $data['message']['text'])){
@@ -323,7 +320,7 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][9])."/", $data['mes
 }
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][8])."/", $data['message']['text'])){
 	//Mining
-	#miningMenu("");
+	miningMenu("");
 
 }
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][11])."/", $data['message']['text'])){
@@ -403,14 +400,14 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][54])."/", $data['me
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][55])."/", $data['message']['text'])){
 	//Buy NFT
 		clean_temp_sess();
-/*		$str4ins = "INSERT INTO `temp_sess` (`chatid`,`action`) VALUES ('$chat_id','walletfor_nft')";
+		$str4ins = "INSERT INTO `temp_sess` (`chatid`,`action`) VALUES ('$chat_id','walletfor_nft')";
 		mysqli_query($link, $str4ins);		
 
 		$response = array(
 			'chat_id' => $chat_id, 
 			'text' => $text[$langcode][56],
 			'parse_mode' => 'HTML');	
-		sendit($response, 'sendMessage');*/
+		sendit($response, 'sendMessage');
 		NFTMenu("");
 }
 elseif( preg_match("/".str_replace("-", "\-", "Pre-sale Token")."/", $data['message']['text'])){
@@ -418,7 +415,7 @@ elseif( preg_match("/".str_replace("-", "\-", "Pre-sale Token")."/", $data['mess
 	TONMenu();
 	
 }
-elseif( preg_match("/".str_replace("(", "\(", str_replace(")", "\)", "Tegro (TON)"))."/", $data['message']['text'])){
+elseif( preg_match("/".str_replace("(", "\(", str_replace(")", "\)", "TON CON"))."/", $data['message']['text'])){
 	
 	processWallet();
 	
@@ -984,8 +981,8 @@ else{
 			$result17 = mysqli_query($link, $str17select);
 			$row17 = @mysqli_fetch_object($result17);
 			
-			if(preg_match("/blogger/", $row17->nftcode)){
-				$recepientwallet = "EQCeV3nQd6cHE4DgMsUb4xc5GRITAbxGe1jJsL1c66e7b9c4";
+			if(preg_match("/fingerprints/", $row17->nftcode)){
+				$recepientwallet = "EQCjNf6y_RhVATipbgKpCBAa8h5z6mwIXv3oDY7UZRyv0w3m";
 			}else{
 				$recepientwallet = $verifyrecepient;
 			}
@@ -1017,9 +1014,9 @@ else{
 				$codeparts = explode(";", $nftcodeORIG);
 				if($codeparts[0] == "cat"){
 					$dividend = $nftCatRate;
-				}elseif($codeparts[0] == "dog"){
+				}elseif($codeparts[0] == "con"){
 					$dividend = $nftDogRate;	
-				}elseif($codeparts[0] == "blogger"){
+				}elseif($codeparts[0] == "fingerprints"){
 					$dividend = $nftCustRate;									
 				}
 				
@@ -1035,9 +1032,10 @@ else{
 					$row16 = @mysqli_fetch_object($result16);
 					if($codeparts[0] == "cat"){
 						$oldsum = $row16->cat;
-					}elseif($codeparts[0] == "dog"){
+					}elseif($codeparts[0] == "con"){
 						$oldsum = $row16->dog;	
-					}elseif($codeparts[0] == "blogger"){
+						$codeparts[0] = "dog";	
+					}elseif($codeparts[0] == "fingerprints"){
 						$oldsum = $row16->cust;	
 						$codeparts[0] = "cust";				
 					}
@@ -1072,7 +1070,7 @@ else{
 					$confirmmessage = str_replace("%cointype%", "Dog", $confirmmessage);	
 				}elseif($codeparts[0] == "cust"){
 					$confirmmessage = str_replace("%NFTBalance%", $row16->cust, $confirmmessage);	
-					$confirmmessage = str_replace("%cointype%", "Custom Anime", $confirmmessage);														
+					$confirmmessage = str_replace("%cointype%", "TON Fingerprints", $confirmmessage);														
 				}			
 				
 				######## SAVE TRANSACTION ###########
@@ -1104,7 +1102,7 @@ else{
 			}else{
 				$response = array(
 					'chat_id' => $chat_id, 
-					'text' => "❌ ".$text[$langcode][62],
+					'text' => "🕑 ".$text[$langcode][62],
 					'parse_mode' => 'HTML');	
 				sendit($response, 'sendMessage');				
 			}		
@@ -1257,8 +1255,8 @@ else{
 		}
 		elseif( preg_match("/checksubscr/", $data['callback_query']['data']) ){	
 		
-			$channel_id1 = "@tegrocatnft";
-			$channel_id2 = "@gusevself";
+			$channel_id1 = "@ton_con";
+			$channel_id2 = "@ton_con_ru";
 			
 			$ch = curl_init('https://api.telegram.org/bot' . TOKEN . '/getChatMember');  
 			curl_setopt($ch, CURLOPT_POST, 1);  
@@ -1501,11 +1499,11 @@ else{
 				}
 				elseif($row5->action == 'wal4dog_nft'){
 					$tomesnft = str_replace("%NFTBalance%", $dogbalance, $text[$langcode][70]);
-					$prefix = "dog;";
+					$prefix = "con;";
 				}
 				elseif($row5->action == 'wal4cust_nft'){
 					$tomesnft = str_replace("%NFTBalance%", $custbalance, $text[$langcode][79]);
-					$prefix = "blogger;";
+					$prefix = "fingerprints;";
 				}				
 
 				$tomesnft = str_replace("%NFTWallet%", $verifyrecepient, $tomesnft);
@@ -1722,10 +1720,10 @@ function rand_string( $length ) {
 function mainmenu($premessage){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
-	$arInfo["keyboard"][0][0]["text"] = "️🪙 Pre-sale TGR";
+	$arInfo["keyboard"][0][0]["text"] = "️🔵 Pre-sale TON CON";
 	$arInfo["keyboard"][0][1]["text"] = "💎 ".$text[$langcode][2];
-	#$arInfo["keyboard"][0][1]["text"] = "🖼 ".$text[$langcode][55];
-	#$arInfo["keyboard"][1][0]["text"] = "🪙 Pre-sale Token";
+	$arInfo["keyboard"][0][1]["text"] = "🖼 ".$text[$langcode][55];
+	$arInfo["keyboard"][1][0]["text"] = "🪙 Pre-sale Token";
 	$arInfo["keyboard"][1][0]["text"] = "💹 ".$text[$langcode][5];
 	#$arInfo["keyboard"][2][0]["text"] = "👥 ".$text[$langcode][6];
 	$arInfo["keyboard"][1][1]["text"] = "💳 ".$text[$langcode][3];
@@ -1740,7 +1738,7 @@ function instmenu(){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
 	$arInfo["keyboard"][0][0]["text"] = "🔥 ".$text[$langcode][71];
-	#$arInfo["keyboard"][0][1]["text"] = "⛏ ".$text[$langcode][8];	
+	$arInfo["keyboard"][0][1]["text"] = "⛏ ".$text[$langcode][8];	
 	$arInfo["keyboard"][1][0]["text"] = "↩️ ".$text[$langcode][13];		
 	$arInfo["resize_keyboard"] = TRUE;
 	send($chat_id, $text[$langcode][10].':👇', $arInfo); 	
@@ -1751,7 +1749,7 @@ function settingsMenu($message){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
 	$arInfo["keyboard"][0][0]["text"] = "💭 ".$text[$langcode][9];
-	$arInfo["keyboard"][0][1]["text"] = "💸 ".$text[$langcode][7];
+	$arInfo["keyboard"][0][1]["text"] = "🙏 ".$text[$langcode][7];
 	$arInfo["keyboard"][1][0]["text"] = "📨 ".$text[$langcode][63];
 	$arInfo["keyboard"][1][1]["text"] = "🎁 ".$text[$langcode][4];	
 	$arInfo["keyboard"][2][0]["text"] = "↩️ ".$text[$langcode][13];	
@@ -1775,9 +1773,9 @@ function miningMenu($message){
 function NFTMenu($message){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
-	$arInfo["keyboard"][0][0]["text"] = "🐱 ".$text[$langcode][66];
-	$arInfo["keyboard"][0][1]["text"] = "🐶 ".$text[$langcode][67];
-	$arInfo["keyboard"][1][0]["text"] = "🔞 ".$text[$langcode][78];	
+	$arInfo["keyboard"][0][0]["text"] = "🔵 ".$text[$langcode][66];
+	$arInfo["keyboard"][0][1]["text"] = "🖼 ".$text[$langcode][67];
+	$arInfo["keyboard"][1][0]["text"] = "👆 ".$text[$langcode][78];	
 	$arInfo["keyboard"][1][1]["text"] = "↩️ ".$text[$langcode][13];
 	$arInfo["resize_keyboard"] = TRUE;
 	send($chat_id, $message.$text[$langcode][10].'👇', $arInfo); 	
@@ -1820,7 +1818,7 @@ function delMessage($mid, $cid){
 function TONMenu(){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
-	$arInfo["keyboard"][0][0]["text"] = "Tegro (TON)";
+	$arInfo["keyboard"][0][0]["text"] = "CON Jetton";
 	#$arInfo["keyboard"][0][1]["text"] = "Tegro (BEP20)";
 	$arInfo["keyboard"][0][1]["text"] = "The Token";	
 	$arInfo["keyboard"][1][0]["text"] = "↩️ Back";
