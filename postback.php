@@ -71,7 +71,7 @@ for ($i = 0; $i < count($text); $i++) {
 // LANGUAGE
 
 include "acceptton.php";
-acceptton($amount, "Tegro Money");
+acceptton($amount, "TON CON");
 
 // check for pending order
 		
