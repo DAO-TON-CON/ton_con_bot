@@ -1721,14 +1721,15 @@ function mainmenu($premessage){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
 	$arInfo["keyboard"][0][0]["text"] = "️🔵 Pre-sale TON CON";
-	$arInfo["keyboard"][0][1]["text"] = "💎 ".$text[$langcode][2];
 	$arInfo["keyboard"][0][1]["text"] = "🖼 ".$text[$langcode][55];
-	$arInfo["keyboard"][1][0]["text"] = "🪙 Pre-sale Token";
+	#$arInfo["keyboard"][1][0]["text"] = "🪙 Pre-sale Token";
 	$arInfo["keyboard"][1][0]["text"] = "💹 ".$text[$langcode][5];
 	#$arInfo["keyboard"][2][0]["text"] = "👥 ".$text[$langcode][6];
 	$arInfo["keyboard"][1][1]["text"] = "💳 ".$text[$langcode][3];
-	$arInfo["keyboard"][2][0]["text"] = "⚙️ ".$text[$langcode][54];		
+	$arInfo["keyboard"][2][0]["text"] = "💎 ".$text[$langcode][2];
 	$arInfo["keyboard"][2][1]["text"] = "🛠 ".$text[$langcode][106];
+	$arInfo["keyboard"][3][0]["text"] = "⚙️ ".$text[$langcode][54];		
+
 	$arInfo["resize_keyboard"] = TRUE;
 	send($chat_id, $premessage.$text[$langcode][10].':👇', $arInfo); 	
 	
