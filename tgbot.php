@@ -2059,7 +2059,7 @@ function checkInlineQuery()
 						// 'id' => 0,
 						'title' => $text[$langcode][110],
 						'description' => $text[$langcode][113],
-						'thumb_url' => 'https://smoservice.vc/TGBot/avatar.JPG',
+						'thumb_url' => 'https://raw.githubusercontent.com/DAO-TON-CON/ton_con_bot/main/logo.jpg',
 
 						// InputMessageContent https://core.telegram.org/bots/api#inputmessagecontent
 						'input_message_content' =>
