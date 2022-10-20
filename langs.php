@@ -114,7 +114,7 @@ $text[1][108] = "Пригласи друга прямо отсюда и полу
 $text[1][109] = "🎁 Пригласить друзей";
 $text[1][110] = "Отправить приглашение";
 $text[1][111] = "🥳 Привет, приглашаю тебя принять участие в TON CON";
-$text[1][112] = "🪙 Участвовать в pre-sale CON";
+$text[1][112] = "🔵 Участвовать в TON CON";
 $text[1][113] = "Пригласи друга и получай 10% с операций в боте.";
 
 
@@ -230,7 +230,7 @@ $text[0][108] = "Refer a friend from here and get a bonus!";
 $text[0][109] = "🎁 Invite Friends";
 $text[0][110] = "Send Invite";
 $text[0][111] = "🥳 Hello, I invite you to buy TON and participate in TON CON";
-$text[0][112] = "🪙 Buy in presale CON Jetton";
+$text[0][112] = "🔵 Buy in presale CON Jetton";
 $text[0][113] = "Invite a friend and get 10% from transactions.";
 
 ?>
