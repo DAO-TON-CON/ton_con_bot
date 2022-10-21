@@ -297,7 +297,7 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][6])."/", $data['mes
 ▸ <a href='https://t.me/tondev'>TON Developers Chat</a> ",
 		'parse_mode' => 'HTML',
 		'disable_web_page_preview' => True);	
-	#sendit($response, 'sendMessage');
+	sendit($response, 'sendMessage');
 	
 }
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][7])."/", $data['message']['text'])){
@@ -320,7 +320,7 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][9])."/", $data['mes
 }
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][8])."/", $data['message']['text'])){
 	//Mining
-	miningMenu("");
+	#miningMenu("");
 
 }
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][11])."/", $data['message']['text'])){
@@ -1012,7 +1012,7 @@ else{
 				
 				$dividend = 0;
 				$codeparts = explode(";", $nftcodeORIG);
-				if($codeparts[0] == "cat"){
+				if($codeparts[0] == "keys"){
 					$dividend = $nftCatRate;
 				}elseif($codeparts[0] == "con"){
 					$dividend = $nftDogRate;	
@@ -1030,7 +1030,7 @@ else{
 					mysqli_query($link, $str2ins);
 				}else{
 					$row16 = @mysqli_fetch_object($result16);
-					if($codeparts[0] == "cat"){
+					if($codeparts[0] == "keys"){
 						$oldsum = $row16->cat;
 					}elseif($codeparts[0] == "con"){
 						$oldsum = $row16->dog;	
@@ -1064,7 +1064,7 @@ else{
 				$confirmmessage = str_replace("%NFTAdded%", $gotNFT, $text[$langcode][61]);
 				if($codeparts[0] == "cat"){
 					$confirmmessage = str_replace("%NFTBalance%", $row16->cat, $confirmmessage);
-					$confirmmessage = str_replace("%cointype%", "Cat", $confirmmessage);					
+					$confirmmessage = str_replace("%cointype%", "TON Keys", $confirmmessage);					
 				}elseif($codeparts[0] == "dog"){
 					$confirmmessage = str_replace("%NFTBalance%", $row16->dog, $confirmmessage);	
 					$confirmmessage = str_replace("%cointype%", "Dog", $confirmmessage);	
@@ -1495,7 +1495,7 @@ else{
 				$prefix = "";
 				if($row5->action == 'wal4cat_nft'){
 					$tomesnft = str_replace("%NFTBalance%", $catbalance, $text[$langcode][69]);
-					$prefix = "cat;";
+					$prefix = "keys;";
 				}
 				elseif($row5->action == 'wal4dog_nft'){
 					$tomesnft = str_replace("%NFTBalance%", $dogbalance, $text[$langcode][70]);
@@ -1724,11 +1724,11 @@ function mainmenu($premessage){
 	$arInfo["keyboard"][0][1]["text"] = "🖼 ".$text[$langcode][55];
 	#$arInfo["keyboard"][1][0]["text"] = "🪙 Pre-sale Token";
 	$arInfo["keyboard"][1][0]["text"] = "💹 ".$text[$langcode][5];
-	#$arInfo["keyboard"][2][0]["text"] = "👥 ".$text[$langcode][6];
 	$arInfo["keyboard"][1][1]["text"] = "💳 ".$text[$langcode][3];
 	$arInfo["keyboard"][2][0]["text"] = "💎 ".$text[$langcode][2];
 	$arInfo["keyboard"][2][1]["text"] = "🛠 ".$text[$langcode][106];
-	$arInfo["keyboard"][3][0]["text"] = "⚙️ ".$text[$langcode][54];		
+	$arInfo["keyboard"][3][0]["text"] = "⚙️ ".$text[$langcode][54];
+	#$arInfo["keyboard"][3][1]["text"] = "👥 ".$text[$langcode][6];		
 
 	$arInfo["resize_keyboard"] = TRUE;
 	send($chat_id, $premessage.$text[$langcode][10].':👇', $arInfo); 	
@@ -1739,7 +1739,7 @@ function instmenu(){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
 	$arInfo["keyboard"][0][0]["text"] = "🔥 ".$text[$langcode][71];
-	$arInfo["keyboard"][0][1]["text"] = "⛏ ".$text[$langcode][8];	
+	#$arInfo["keyboard"][0][1]["text"] = "⛏ ".$text[$langcode][8];	
 	$arInfo["keyboard"][1][0]["text"] = "↩️ ".$text[$langcode][13];		
 	$arInfo["resize_keyboard"] = TRUE;
 	send($chat_id, $text[$langcode][10].':👇', $arInfo); 	
@@ -1774,8 +1774,8 @@ function miningMenu($message){
 function NFTMenu($message){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
-	$arInfo["keyboard"][0][0]["text"] = "🔵 ".$text[$langcode][66];
-	$arInfo["keyboard"][0][1]["text"] = "💡 ".$text[$langcode][67];
+	$arInfo["keyboard"][0][0]["text"] = "💡 ".$text[$langcode][67];
+	$arInfo["keyboard"][0][1]["text"] = "🗝️ ".$text[$langcode][66];
 	$arInfo["keyboard"][1][0]["text"] = "👆 ".$text[$langcode][78];	
 	$arInfo["keyboard"][1][1]["text"] = "↩️ ".$text[$langcode][13];
 	$arInfo["resize_keyboard"] = TRUE;
