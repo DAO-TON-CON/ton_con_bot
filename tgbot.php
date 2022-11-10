@@ -121,7 +121,7 @@ t.me/ton_con_bot?start='.$ref);
 }
 // record referral
 
-#mainmenu("Привет! Я Ваш виртуальный помощник в мире TON CON. ");
+# mainmenu("Привет! Я Ваш виртуальный помощник в мире TON CON. ");
 setLangiage();
 
 
@@ -392,6 +392,7 @@ elseif( preg_match("/".str_replace("?", "", $text[$langcode][13])."|Back/", $dat
 
 	mainmenu("");
 }
+
 elseif( preg_match("/".str_replace("?", "", $text[$langcode][54])."/", $data['message']['text'])){
 				
 	settingsMenu("");
@@ -683,6 +684,7 @@ else{
 			mainmenu($text[$langcode][1]);			
 									
 		}
+
 		elseif( preg_match("/walletnum/", $data['callback_query']['data']) ){
 
 			$walletid = str_replace("walletnum", "", $data['callback_query']['data']);
@@ -1720,15 +1722,15 @@ function rand_string( $length ) {
 function mainmenu($premessage){
 	global $chat_id, $link, $lang, $text, $langcode;
 	
-	$arInfo["keyboard"][0][0]["text"] = "️🔵 Pre-sale TON CON";
+	$arInfo["keyboard"][0][0]["text"] = "️🔵 Pre-sale CON";
 	$arInfo["keyboard"][0][1]["text"] = "🖼 ".$text[$langcode][55];
-	#$arInfo["keyboard"][1][0]["text"] = "🪙 Pre-sale Token";
 	$arInfo["keyboard"][1][0]["text"] = "💹 ".$text[$langcode][5];
 	$arInfo["keyboard"][1][1]["text"] = "💳 ".$text[$langcode][3];
 	$arInfo["keyboard"][2][0]["text"] = "💎 ".$text[$langcode][2];
 	$arInfo["keyboard"][2][1]["text"] = "🛠 ".$text[$langcode][106];
 	$arInfo["keyboard"][3][0]["text"] = "⚙️ ".$text[$langcode][54];
 	#$arInfo["keyboard"][3][1]["text"] = "👥 ".$text[$langcode][6];		
+	#$arInfo["keyboard"][4][0]["text"] = "🪙 Text";
 
 	$arInfo["resize_keyboard"] = TRUE;
 	send($chat_id, $premessage.$text[$langcode][10].':👇', $arInfo); 	
@@ -1758,7 +1760,6 @@ function settingsMenu($message){
 	send($chat_id, $text[$langcode][10].'👇', $arInfo); 	
 	
 }
-
 
 function miningMenu($message){
 	global $chat_id, $link, $lang, $text, $langcode;
